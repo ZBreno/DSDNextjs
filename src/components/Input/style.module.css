@@ -1,0 +1,11 @@
+.input {
+    padding: 12px;
+    width: 430px;
+    border: 1px solid #D9D9D9;
+}
+
+.input::placeholder {
+    font-size: 20px;
+    font-weight: 500;
+        
+}

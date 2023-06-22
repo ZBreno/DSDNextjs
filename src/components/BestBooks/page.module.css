@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.books {
+  width: 207px;
+  margin: 15px;
+  height: 200px;
+  background-color: #d9d9d9;
+}

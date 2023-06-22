@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  margin: 40px;
+  gap: 40px;
+}
+
+.book {
+  width: 300px;
+  height: 400px;
+  background-color: #d9d9d9;
+}
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  margin-top: 6px;
+  color: #8239f2;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: #494d4b;
+}
+.creator {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #008fcc;
+}
+
+.button {
+  background: #43e8be;
+  border-radius: 5px;
+  color: white;
+  padding: 8px;
+  border: none;
+  width: 300px;
+  cursor: pointer;
+}
+
+.titleBook {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 60px;
+  color: #8239f2;
+}
+
+.ratingNumber {
+  background: #009933;
+  border-radius: 15px;
+  padding: 4px;
+  color: white;
+  margin-right: 16px;
+}
+
+.quantityRating {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 33px;
+  color: #494d4b;
+}
+
+.containerCreate {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.containerCreate p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #808080;
+}
+
+.titleComment {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+
+  margin: 20px 0px;
+  color: #000000;
+}
+
