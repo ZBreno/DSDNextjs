@@ -50,14 +50,15 @@
 .ratingNumber {
   background: #009933;
   border-radius: 15px;
-  padding: 4px;
+  padding: 12px;
   color: white;
+  font-size: 20px;
   margin-right: 16px;
 }
 
 .quantityRating {
   font-weight: 400;
-  font-size: 28px;
+  font-size: 16px;
   line-height: 33px;
   color: #494d4b;
 }

@@ -1,15 +1,43 @@
+"use client";
 import { Star, Heart } from "lucide-react";
 import style from "./style.module.css";
 import Comment from "../Comment";
+import { useEffect, useState } from "react";
+import api from "@/services/api";
+import Image from "next/image";
 
-export default function DetailsBook() {
+interface DetailsBookProps {
+  id: string;
+}
+
+interface Book {
+  id: number;
+  title: string;
+  author: string;
+  abstract: string;
+  image: string | StaticImport;
+  users: number[],
+  comments: number[],
+}
+
+export default function DetailsBook({ id }: DetailsBookProps) {
+  const [book, setBook] = useState<Book | null>(null);
+
+  const handleBook = async () => {
+    const response = await api.get(`books/${id}`);
+    setBook(response.data);
+  };
+
+  useEffect(() => {
+    handleBook();
+  }, []);
   return (
     <div className={style.container}>
       <div className={style.containerInfo}>
-        <div className={style.book}></div>
-        <p className={style.title}>Título do livro</p>
+        <Image alt="capa do livro" src={book?.image} width={300} height={400}/>
+        <p className={style.title}>{book?.title}</p>
         <p className={style.description}>Lorem ipsum dolor sit amet</p>
-        <p className={style.creator}>Fulano de Tal</p>
+        <p className={style.creator}>{book?.author}</p>
         <div>
           <Star color="yellow" fill="yellow" />
           <Star color="yellow" fill="yellow" />
@@ -20,7 +48,7 @@ export default function DetailsBook() {
         <button className={style.button}>Adicionar à biblioteca</button>
       </div>
       <div>
-        <p className={style.titleBook}>Título do livro</p>
+        <p className={style.titleBook}>{book?.title}</p>
         <div
           style={{
             display: "flex",
@@ -38,20 +66,14 @@ export default function DetailsBook() {
           <p>data</p>
         </div>
         <p className={style.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-          sagittis a augue sit amet auctor. Integer eget gravida nibh, vel
-          feugiat nibh. Aenean malesuada, mi non maximus bibendum, magna lorem
-          vulputate mauris, at rhoncus risus urna eu nibh. In sed tellus tellus.
-          Suspendisse nulla augue, tempor sit amet ex vel, lobortis varius
-          sapien. Phasellus in tristique felis. Phasellus blandit augue.
+          {book?.abstract}
         </p>
-        <div style={{display: "flex", flexDirection: "column",gap: 32}}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
           <p className={style.titleComment}>Comentários</p>
 
-          <Comment/>
-          <Comment/>  
+          <Comment />
+          <Comment />
         </div>
-       
       </div>
     </div>
   );
